@@ -8,16 +8,26 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-    Button entranceButton;
+    Button examSignInButton;
+    Button managerSignInButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        entranceButton = (Button) findViewById(R.id.entrance);
-        entranceButton.setOnClickListener(new View.OnClickListener(){
+        examSignInButton = (Button) findViewById(R.id.examSignIn);
+        managerSignInButton = (Button) findViewById(R.id.managerSignIn);
+        examSignInButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), SignIn.class); // signin뷰로 이동
+                Intent intent = new Intent(getApplicationContext(), ExamSignIn.class); // signin뷰로 이동
+                finish();
+                startActivity(intent);
+            }
+        });
+        managerSignInButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), ManagerSignIn.class);
                 finish();
                 startActivity(intent);
             }

@@ -13,16 +13,18 @@ public class Exam extends AppCompatActivity {
     TextureView examStart;
     Button examFinishButton;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exam);
         examFinishButton = (Button) findViewById(R.id.finish);
         examStart = (TextureView) findViewById(R.id.cam);
+
         examFinishButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class); // signin뷰로 이동
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 finish();
                 startActivity(intent);
 
